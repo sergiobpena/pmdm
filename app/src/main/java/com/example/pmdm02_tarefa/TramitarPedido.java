@@ -104,4 +104,14 @@ public class TramitarPedido extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode == COD_PETICION){
+            if (requestCode == RESULT_OK){
+                //TODO BIEN
+            }
+        }else {
+            //todo mal
+        }
+    }
 }
