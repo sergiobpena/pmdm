@@ -1,0 +1,36 @@
+<resources>
+    <string name="direccion">Direccion</string>
+    <string name="cidade">Cidade</string>
+    <string name="cp">Codigo Postal</string>
+    <string name="app_name">PMDM02_TAREFA</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="fpedido">Facer pedido</string>
+    <string name="pedido_realizado">Pedidos Realizados</string>
+    <string name="pedidos_tramite">Pedidos en tramite</string>
+    <string name="sair">Sair</string>
+    <string name="nome_usuario">Nome de usuario</string>
+    <string name="contrasinal">Contrasinal</string>
+    <string name="admin_nome">Admin Nome</string>
+    <string name="admin_apel1">Admin Apelido 1</string>
+    <string name="admin_apel2">Admin Apelido 2</string>
+    <string-array name="catedorias">
+        <item>Informatica</item>
+        <item>Electronica</item>
+        <item>Mobiles</item>
+    </string-array>
+    <string-array name="productos_informatica">
+        <item>PC de Sobremesa </item>
+        <item>Portatil </item>
+        <item>Monitor.</item>
+    </string-array>
+    <string-array name="productos_electronica">
+        <item>Television</item>
+        <item>DVD</item>
+    </string-array>
+    <string-array name="productos_mobiles">
+        <item>Pixel</item>
+        <item> Galaxy </item>
+        <item>Iphone</item>
+        <item> Xiaomi.</item>
+    </string-array>
+</resources>
