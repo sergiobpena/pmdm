@@ -5,7 +5,7 @@
 *.aab
 # Visual paradigm
 
-*.back_*
+*.bak_*
 *.lck
 
 # Files for the ART/Dalvik VM

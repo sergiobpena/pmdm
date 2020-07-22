@@ -19,6 +19,7 @@ public class TramitarPedido extends AppCompatActivity {
     public final static String categoriaPedida="CATEGORIA";
     public final static String productoPedido="PRODUCTO";
     public final static String cantidadePedida="CANTIDADE";
+    private final int COD_PETICION=34;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class TramitarPedido extends AppCompatActivity {
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_CANCELED);
                 finish();
             }
         });
@@ -51,8 +53,8 @@ public class TramitarPedido extends AppCompatActivity {
                 intent.putExtra(categoriaPedida,spCategoria.getSelectedItem().toString());
                 intent.putExtra(productoPedido,spProducto.getSelectedItem().toString());
                 intent.putExtra(categoriaPedida,cantidadeEt.getText().toString());
-                startActivity(intent);
-                finish();
+                startActivityForResult(intent,34);
+//                finish();
             }
         });
     }
@@ -106,9 +108,11 @@ public class TramitarPedido extends AppCompatActivity {
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == COD_PETICION){
-            if (requestCode == RESULT_OK){
-                //TODO BIEN
+        if(requestCode == 34){
+            if (resultCode  == RESULT_OK){
+//                Intent intent= new Intent(getApplicationContext(),UsuatioActivity.class);
+                setResult(RESULT_OK);
+                finish();
             }
         }else {
             //todo mal

@@ -50,18 +50,34 @@ public class UsuatioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(getApplicationContext(),TramitarPedido.class);
-                startActivityForResult(intent,COD_PETICION);
+                startActivityForResult(intent,33);
 //                intent.putExtra(NOME,user);
+//                startActivity(intent);
+                finish();
+            }
+        });
+        Button btnPedidosEnTramite= findViewById(R.id.btnPedidoTram);
+        btnPedidosEnTramite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),UsuarioPedidosEnTramite.class);
                 startActivity(intent);
-//                finish();
+            }
+        });
+        Button btnCompras=findViewById(R.id.btnPedidosRealizados);
+        btnCompras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),UsuarioComprasRealizadas.class);
+                startActivity(intent);
             }
         });
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == COD_PETICION){
-            if (requestCode == RESULT_OK){
+        if(requestCode == 33){
+            if (resultCode  == RESULT_OK){
                 //TODO BIEN
             }
         }else {

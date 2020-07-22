@@ -14,6 +14,7 @@ public class DatosDeEnvio extends AppCompatActivity {
     EditText direccion;
     EditText cidade;
     EditText cp;
+    private final int COD_PETICION=33;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,9 @@ public class DatosDeEnvio extends AppCompatActivity {
         btnsair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),TramitarPedido.class);
+                setResult(RESULT_CANCELED);
+                startActivityForResult(intent,33);
                 finish();
             }
         });
@@ -48,8 +52,9 @@ public class DatosDeEnvio extends AppCompatActivity {
                 String cpString=cp.getText().toString();
                 String textoToast="Categoria : " + datos[1] +"\tProducto : " +  datos[2] +"\t Cantidade " +  datos[0] +"\tDireccion : " +  direccionString +"\t Cidade" +  cidadeString + "\tCodigo postal" + cpString ;
                 Toast.makeText(getApplicationContext(),textoToast, Toast.LENGTH_LONG).show();
-//                Intent intent= new Intent(getApplicationContext(),UsuatioActivity.class);
+                Intent intent= new Intent(getApplicationContext(),TramitarPedido.class);
                 setResult(RESULT_OK);
+                startActivityForResult(intent,33);
 //                startActivity(intent);
                 finish();
             }
