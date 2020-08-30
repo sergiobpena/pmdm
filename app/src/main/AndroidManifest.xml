@@ -15,7 +15,8 @@
         <activity android:name=".DatosDeEnvio" />
         <activity android:name=".TramitarPedido" />
         <activity android:name=".UsuatioActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="Practica PMDM">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
