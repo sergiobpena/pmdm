@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UsuarioComprasRealizadas"></activity>
-        <activity android:name=".UsuarioPedidosEnTramite" />
-        <activity android:name=".AdminActiviti" />
-        <activity android:name=".DatosDeEnvio" />
-        <activity android:name=".TramitarPedido" />
-        <activity android:name=".UsuatioActivity" />
-        <activity android:name=".MainActivity"
+        <activity android:name=".views.UsuarioComprasRealizadas" />
+        <activity android:name=".views.UsuarioPedidosEnTramite" />
+        <activity android:name=".views.AdminActiviti" />
+        <activity android:name=".views.DatosDeEnvio" />
+        <activity android:name=".views.TramitarPedido" />
+        <activity android:name=".views.UsuatioActivity" />
+        <activity
+            android:name=".MainActivity"
             android:label="Practica PMDM">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UsuatioActivity">
+    tools:context=".views.UsuatioActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,40 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/textViewNomeUsuario2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Apelido 1"
-        app:layout_constraintBottom_toTopOf="@+id/textViewNomeUsuario3"
-        app:layout_constraintStart_toStartOf="@+id/textViewNomeUsuario3"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNomeUsuario" />
-
-    <TextView
-        android:id="@+id/textViewNomeUsuario3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:text="Apelido 2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNomeUsuario2" />
-
-    <TextView
-        android:id="@+id/textViewNomeUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="Nome"
-        app:layout_constraintBottom_toTopOf="@+id/textViewNomeUsuario2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="0dp"
         android:layout_height="110dp"
         android:layout_marginStart="1dp"
@@ -94,5 +62,14 @@
         </TableRow>
 
     </TableLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

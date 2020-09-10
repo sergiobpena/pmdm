@@ -1,4 +1,4 @@
-package com.example.pmdm02_tarefa.repositorios;
+package com.example.pmdm02_tarefa.repositorios.entidades;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

@@ -1,4 +1,4 @@
-package com.example.pmdm02_tarefa;
+package com.example.pmdm02_tarefa.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.pmdm02_tarefa.R;
 
 public class DatosDeEnvio extends AppCompatActivity {
     String [] datos=new String[3];

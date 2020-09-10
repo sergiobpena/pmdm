@@ -1,4 +1,4 @@
-package com.example.pmdm02_tarefa.views.ui.main;
+package com.example.pmdm02_tarefa.viewModels;
 
 import androidx.lifecycle.ViewModel;
 

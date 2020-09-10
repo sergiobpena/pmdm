@@ -1,4 +1,4 @@
-package com.example.pmdm02_tarefa.repositorios;
+package com.example.pmdm02_tarefa.repositorios.entidades;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
@@ -6,7 +6,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "usuarios",
-        indices = {@Index(value = {"usuario"}, unique = false)})
+        indices = {@Index(value = {"usuario"}, unique = true)})
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -34,6 +34,18 @@ public class Usuario {
         this.pass = pass;
     }
     public Usuario(){}
+
+    public Usuario(long l, String nome, String usuario, String pass, String apelido1, String apelido2,String correoe,UsuarioTipo usuarioTipo ) {
+        this.nome = nome;
+        this.usuario = usuario;
+        this.pass = pass;
+        this.apelido1 = apelido1;
+        this.apelido2 = apelido2;
+        this.correoe=correoe;
+        this.usuarioTipo=usuarioTipo.get_id();
+        this._id=l;
+
+    }
 
     public String getPass() {
         return pass;
