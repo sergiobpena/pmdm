@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".views.RexistroUsusarioActivity"></activity>
         <activity android:name=".views.UsuarioComprasRealizadas" />
         <activity android:name=".views.UsuarioPedidosEnTramite" />
         <activity android:name=".views.AdminActiviti" />

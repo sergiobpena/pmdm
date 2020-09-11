@@ -2,6 +2,7 @@ package com.example.pmdm02_tarefa.repositorios.daos;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
@@ -10,7 +11,7 @@ import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 public interface UsuarioDao {
     @Query("SELECT * FROM usuarios where usuario = :usuario")
     public Usuario getUsuario(String usuario);
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertarUsuario(Usuario usuario);
     @Query("SELECT * FROM usuarios where usuario = :user")
     Usuario dameUserUser(String user);

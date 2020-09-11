@@ -1,6 +1,7 @@
 package com.example.pmdm02_tarefa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 import com.example.pmdm02_tarefa.viewModels.LoginViewModel;
 import com.example.pmdm02_tarefa.views.AdminActiviti;
+import com.example.pmdm02_tarefa.views.RexistroUsusarioActivity;
 import com.example.pmdm02_tarefa.views.UsuatioActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -88,12 +90,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    public void rexistrarNovo(){
+        Button btnRexistrar=(Button)findViewById(R.id.btnLgRexistrar);
+                btnRexistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentRexistro=new Intent(getApplicationContext(), RexistroUsusarioActivity.class);
+                startActivity(intentRexistro);
+                finish();
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.loginViewModel= new LoginViewModel(getApplication());
+        this.loginViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
         login();
+        rexistrarNovo();
     }
 }

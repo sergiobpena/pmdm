@@ -7,6 +7,8 @@ import com.example.pmdm02_tarefa.repositorios.daos.UsuarioTipoDAO;
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 import com.example.pmdm02_tarefa.repositorios.entidades.UsuarioTipo;
 
+import java.util.List;
+
 public class UsuarioRepositorio {
     private UsuarioDao usuarioDao;
     private UsuarioTipoDAO usuarioTipoDAO;
@@ -25,5 +27,13 @@ public class UsuarioRepositorio {
     }
 
     public Usuario dameUsuarioUser(String user) { return usuarioDao.dameUserUser(user);
+    }
+
+    public List<UsuarioTipo> dameTipos() {
+        return  usuarioTipoDAO.tipos();
+    }
+
+    public void insertar(Usuario usuario) {
+        usuarioDao.insertarUsuario(usuario);
     }
 }

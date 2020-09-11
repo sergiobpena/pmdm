@@ -8,6 +8,9 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 import com.example.pmdm02_tarefa.repositorios.UsuarioRepositorio;
+import com.example.pmdm02_tarefa.repositorios.entidades.UsuarioTipo;
+
+import java.util.List;
 
 public class LoginViewModel extends AndroidViewModel {
     public static final int LOGIN_OK=1;
@@ -45,4 +48,6 @@ public class LoginViewModel extends AndroidViewModel {
         return usuarioRepositorio.dameTipo(usuario.getUsuarioTipo()).getTipo();
     }
     public Usuario dameUsuarioUser(String user){return usuarioRepositorio.dameUsuarioUser(user);}
+    public List<UsuarioTipo> dameTiposUsuario(){return usuarioRepositorio.dameTipos();}
+    public void insertarUsuario(Usuario usuario){usuarioRepositorio.insertar(usuario);}
 }
