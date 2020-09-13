@@ -8,8 +8,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.pmdm02_tarefa.repositorios.daos.DepartamentoDAO;
+import com.example.pmdm02_tarefa.repositorios.daos.DireccionDAO;
+import com.example.pmdm02_tarefa.repositorios.daos.EstadoDAO;
+import com.example.pmdm02_tarefa.repositorios.daos.PedidoDAO;
+import com.example.pmdm02_tarefa.repositorios.daos.ProductoDAO;
 import com.example.pmdm02_tarefa.repositorios.daos.UsuarioDao;
 import com.example.pmdm02_tarefa.repositorios.daos.UsuarioTipoDAO;
+import com.example.pmdm02_tarefa.repositorios.entidades.Producto;
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 import com.example.pmdm02_tarefa.repositorios.entidades.UsuarioTipo;
 
@@ -20,6 +26,12 @@ import java.util.concurrent.Executors;
 public abstract class BDTenda extends RoomDatabase {
     public abstract UsuarioDao usuarioDao();
     public abstract UsuarioTipoDAO usuarioTipoDAO();
+    public abstract DepartamentoDAO departamentoDAO();
+    public abstract PedidoDAO pedidoDAO();
+    public abstract ProductoDAO productoDAO();
+    public abstract EstadoDAO estadoDAO();
+    public abstract DireccionDAO direccionDAO();
+
     private static volatile BDTenda BD;
     private static final int NUM_THREADS=4;
     public static final ExecutorService dbWriteExecutor= Executors.newFixedThreadPool(NUM_THREADS);

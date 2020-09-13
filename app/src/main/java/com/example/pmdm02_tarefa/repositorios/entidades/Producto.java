@@ -12,12 +12,22 @@ public class Producto {
     private String descricion_producto;
     @NonNull
     private long fk_departamento;
+    private double prezo;
 
-    public Producto(long _id, String nome_producto, String descricion_producto, Departamento fk_departamento) {
+    public Producto(long _id, String nome_producto, String descricion_producto, Departamento fk_departamento,double prezo) {
         this._id = _id;
         this.nome_producto = nome_producto;
         this.descricion_producto = descricion_producto;
         this.fk_departamento = fk_departamento.get_id();
+        this.prezo=prezo;
+    }
+
+    public double getPrezo() {
+        return prezo;
+    }
+
+    public void setPrezo(double prezo) {
+        this.prezo = prezo;
     }
 
     public long get_id() {
