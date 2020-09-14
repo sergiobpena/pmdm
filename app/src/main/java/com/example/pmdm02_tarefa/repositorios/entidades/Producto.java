@@ -21,6 +21,7 @@ public class Producto {
         this.fk_departamento = fk_departamento.get_id();
         this.prezo=prezo;
     }
+    public Producto(){}
 
     public double getPrezo() {
         return prezo;

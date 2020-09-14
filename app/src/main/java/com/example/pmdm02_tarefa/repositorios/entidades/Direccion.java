@@ -14,7 +14,7 @@ public class Direccion {
     private int cod_postal;
     @NonNull
     private long fk_usuario;
-
+    public Direccion(){}
     public Direccion(long _id, String direccion, String cidade, int cod_postal, @NonNull Usuario fk_usuario) {
         this._id = _id;
         this.direccion = direccion;

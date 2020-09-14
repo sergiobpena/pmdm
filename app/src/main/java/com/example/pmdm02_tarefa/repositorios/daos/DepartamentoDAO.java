@@ -1,5 +1,6 @@
 package com.example.pmdm02_tarefa.repositorios.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -15,7 +16,7 @@ public interface DepartamentoDAO {
     @Insert
     public void insertar(Departamento departamento);
     @Query("SELECT * FROM Departamento")
-    public List<Departamento> dameTodos();
+    public LiveData<List<Departamento>> dameTodos();
     @Query("SELECT * FROM DEPARTAMENTO WHERE descricion=:desc")
     public Departamento dameUn(String desc);
 }

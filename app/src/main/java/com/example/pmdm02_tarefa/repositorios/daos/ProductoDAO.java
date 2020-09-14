@@ -1,5 +1,6 @@
 package com.example.pmdm02_tarefa.repositorios.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -15,7 +16,7 @@ public interface ProductoDAO {
     @Insert
     void insertar(Producto producto);
     @Query("SELECT * FROM producto")
-    List<Producto> seleccionarTodos();
+    LiveData<List<Producto>> seleccionarTodos();
     @Query("DELETE FROM producto")
     public void eliminarTodos();
     @Query("SELECT * FROM Producto WHERE _id=:id")

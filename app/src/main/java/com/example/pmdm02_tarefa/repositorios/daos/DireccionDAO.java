@@ -9,7 +9,7 @@ import com.example.pmdm02_tarefa.repositorios.entidades.Direccion;
 import java.util.List;
 
 @Dao
-public interface DireccionDAO extends PatronDAO<Direccion> {
+public interface DireccionDAO {
     @Insert
     void insertar(Direccion d);
     @Query("DELETE FROM direccion")

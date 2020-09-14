@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.pmdm02_tarefa.repositorios.daos.DepartamentoDAO;
@@ -15,14 +16,21 @@ import com.example.pmdm02_tarefa.repositorios.daos.PedidoDAO;
 import com.example.pmdm02_tarefa.repositorios.daos.ProductoDAO;
 import com.example.pmdm02_tarefa.repositorios.daos.UsuarioDao;
 import com.example.pmdm02_tarefa.repositorios.daos.UsuarioTipoDAO;
+import com.example.pmdm02_tarefa.repositorios.entidades.Departamento;
+import com.example.pmdm02_tarefa.repositorios.entidades.Direccion;
+import com.example.pmdm02_tarefa.repositorios.entidades.Estados;
+import com.example.pmdm02_tarefa.repositorios.entidades.Pedido;
 import com.example.pmdm02_tarefa.repositorios.entidades.Producto;
+import com.example.pmdm02_tarefa.repositorios.entidades.ProductosPedidos;
 import com.example.pmdm02_tarefa.repositorios.entidades.Usuario;
 import com.example.pmdm02_tarefa.repositorios.entidades.UsuarioTipo;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Usuario.class, UsuarioTipo.class}, version = 1, exportSchema = false)
+@Database(entities = {Usuario.class, UsuarioTipo.class, Departamento.class,
+        Direccion.class, Estados.class, Pedido.class,Producto.class, ProductosPedidos.class}, version = 1, exportSchema = false)
+@TypeConverters({Converters.class})
 public abstract class BDTenda extends RoomDatabase {
     public abstract UsuarioDao usuarioDao();
     public abstract UsuarioTipoDAO usuarioTipoDAO();
@@ -40,7 +48,7 @@ public abstract class BDTenda extends RoomDatabase {
             synchronized (BDTenda.class){
                 if(BD ==null){
                     BD= Room.databaseBuilder(context.getApplicationContext(),
-                            BDTenda.class,"bd_tenda").addCallback(bdCallback).allowMainThreadQueries().build();
+                            BDTenda.class,"bd_tenda_sqlite").addCallback(bdCallback).allowMainThreadQueries().build();
 //                            BDTenda.class,"bd_tenda_final_x").allowMainThreadQueries().build();
                 }
             }

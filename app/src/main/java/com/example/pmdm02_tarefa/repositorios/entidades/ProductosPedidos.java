@@ -3,7 +3,7 @@ package com.example.pmdm02_tarefa.repositorios.entidades;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 
-@Entity(primaryKeys ={"fk_pedido","fk_producto"} )
+@Entity(primaryKeys ={"fk_pedido","fk_producto"})
 public class ProductosPedidos {
     private long fk_pedido;
     private long fk_producto;
